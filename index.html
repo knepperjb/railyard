@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src='assets/javascripts/jquery.js'></script>
+	<script>
+		// $(document).ready(function() {
+		// 	$('.leftbar').css('height', $('body').height());
+		// 	console.log($('html').height());
+		// 	console.log($('.inner').height());
+		// 	console.log($('.leftbar').height());
+		// 	console.log($(document).height());
+		// });
+		// $(document).ready(function() {
+		// 	var h = document.getElementById('container').offsetHeight;
+		// 	document.getElementById('navbar').style.height = h + "px";
+		// });
+		// $(document).ready(function() {
+		// 	var x = $('#container').height();
+		// 	console.log(x)
+		// 	document.getElementById('navbar').style.height = x + "px";
+		// })
+		// $(document).ready(function() {
+		// 	console.log($('html').height());
+
+		// });
+		// var body = document.body,
+  //   		html = document.documentElement;
+
+		// var height = Math.max( html.scrollHeight, html.offsetHeight );
+		// $(document).ready(function() {
+		// 	$('#navbar').height(height);
+		// })
+		
+	</script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<style>
-		body {
+		
+		body, html {
 			background-color: #384D8E;
+			width: 100%;
+			height: 100%;
 		}
+		
 		#container {
 			background-color: white;
 			/*margin-left: 20%;*/
@@ -26,20 +61,27 @@
 		}
 		.inner {
 			margin-left: auto;
+			display: block;
+			/*position: relative;*/
 			margin-right: auto;
 			width: 70%;
-			height: 100vh;
+			height: 100vh !important;
+			overflow: auto;
+			margin-bottom: 0px;
 		}
 		.leftbar {
+			/*position: fixed;*/
 			width: 25%;
-			height: 100vh;
+			height: 1500px;
 			background-color: #F2F2F2;
 			float: left;
 			border: 1px solid #E6E6E6;
+			z-index: 9999;
 		}
 		.header {
-			float: left;
-			margin-left: 10px;
+			/*float: left;*/
+			margin-left: 27vw;
+
 		}
 		#header {
 			font-size: 3vw;
@@ -88,6 +130,138 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 		.leftbartext {
 			font-size: 1vw;
 		}
+		#mainphotodiv {
+			margin-left: 22.5vw;
+			width: 40vw;
+		}
+		#mainphoto {
+			width: 100%;
+			border-radius: 1vw;
+		}
+		.callus {
+			font-size: 1.5vw;
+			color: #80008C;
+			font-weight: bold;
+			margin-left: 3vw;
+			margin-top: 1vw;
+		}
+		#paragraphone {
+			width: 45vw;
+			margin-left: 21vw;
+		}
+		#forless {
+			font-size: 2.5vw;
+			color: #B71A00;
+		}
+		#about {
+			margin-left: 21vw;
+			width: 47vw;
+			margin-top: 5vw;
+		}
+		#aboutheader {
+			font-size: 2.5vw;
+			color: #B71A00;
+		}
+		#abouttext {
+			width: 15vw;
+			float: left;
+		}
+		.intro {
+			font-size: 1.2vw;
+		}
+		#clothesdiv {
+			height: 25vw;
+			width: 25vw;
+			float: left;
+			margin-left: 4vw;
+			margin-top: 8vw;
+		}
+		#clothes {
+			height: 25vw;
+			width: 25vw;
+		}
+		#clothingalterations {
+			margin-top: 47vw;
+			text-align: center;
+			width: 43vw;
+			margin-left: 21vw;
+		}
+		.alterationshead {
+			font-size: 1.2vw;
+			color: #B71A00;
+			font-weight: bold;
+		}
+		.alterationstext {
+			font-size: 1vw;
+		}
+		.creditcarddiv {
+			margin-left: 29vw;
+			margin-top: 5vw;
+			width: 30vw;
+		}
+		#credit {
+			width: 100%;
+			height: 100%;
+		}
+		.bottomlinks {
+			width: 40vw;
+			margin-left: 28vw;
+			margin-top: 2vw;
+		}
+		.footlink {
+			float: left;
+			margin-right: 3vw;
+			border-right: 1px solid black;
+			padding-right: 2vw;
+			font-size: 1vw;
+		}
+		.loc {
+			font-size: 1vw;
+		}
+		#id {
+			border-right: none;
+		}
+		#footer {
+			height: 5vw;
+			margin-top: 1vw;
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1vw;
+		}
+		#address {
+			width: 25%;
+			margin-left: 1vw;
+			float: left;
+		}
+		#phone {
+			float: right;
+			margin-right: 1vw;
+		}
+		@media screen and (max-width: 1920px) {
+			.leftbar {
+				height: 2100px;
+			}
+		}
+		@media screen and (max-width: 1440px) {
+			.leftbar {
+				height: 1640px;
+			}
+		}
+		@media screen and (max-width: 1280px) {
+			.leftbar {
+				height: 1480px;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			.leftbar {
+				height: 1050px;
+			}
+		}
+		@media screen and (max-width: 360px) {
+			.leftbar {
+				height: 640px;
+			}
+		}
 	</style>
 </head>
 <title>
@@ -97,7 +271,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 	<div class='outer'>
 		<div class='middle'>
 			<div class='inner' id='container'>
-				<div class='leftbar'>
+				<div class='leftbar' id='navbar'>
 					<a class='sidelink' href='#'><div class='linkbutton' id='homelink'>
 						<p class='linktext' id='hometext'>Home</p>
 					</div></a>
@@ -123,8 +297,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 				<div class='header'>
 				<h2 id='header' style='color:#B71A00'>The Railyard Cleaners</h2>
 				</div>
+				<div id='mainphotodiv'>
+					<img id='mainphoto' src='assets/photos/railyard.jpg'>
+					<p class='callus'>Call Us in Cedar Park, Texas at (512) 259-5519</p>
+				</div>
+				<div id='paragraphone'>
+					<p id='forless'>Laundry & Clothing Alterations for Less</p>
+					<p class='intro'>Bring your apparel to our Cedar Park, Texas business for professional laundry services and clothing alterations. In business inside the Railyard Shopping Center for 20 years, <span style='font-weight: bold'>The Railyard Cleaners</span> is willing to meet or beat any competitor's price on laundry and alterations! We operate with a smart selection of efficient machines for superior efficiency and great savings to you, so contact our store today for more details on our wide range of services. We also offer a special discount on uniforms for military and public service personnel.</p>
+
+				</div>
+				<div id='about'>
+					<div id='abouttext'>
+					<p id='aboutheader'>About Our Expert Service</p>
+					<p class='intro'>Look no further for same-day and next-day Laundry services! When you leave your clothing with our Cedar Park location before 9:00 a.m., you can have it back after 5:30 p.m. on the same day (Wed and Saturday excluded). We avoid damage to your clothing and buttons with our specialized presses, so contact us for more details.</p>
+					</div>
+					<div id='clothesdiv'>
+						<img id='clothes' src='assets/photos/clothes.jpg'>
+					</div>
+				</div>
+				<div id='clothingalterations'>
+					<p class='alterationshead'>Clothing Alterations</p>
+					<p class='alterationstext'>Our alteration specialist has more than 20 years of experience! We've been told that our fair and competitively priced clothing alterations are the best in Cedar Park, so visit us today.</p>
+					<p class='alterationshead'>General Laundry Service</p>
+					<p class='alterationstext'>We also handle general laundry and this is charged for by the pound.</p>
+				</div>
+				<div class='creditcarddiv'>
+					<img id='credit' src='assets/photos/credit_card_logos_10.jpg'>
+				</div>
+				<div class='bottomlinks'>
+					<div class='footlink'><a href='#'>Home</a></div>
+					<div class='footlink'><a href='#'>Coupons</a></div>
+					<div class='footlink'><a href='#'>Testimonials</a></div>
+					<div class='loc'><a href='#'>Location</a></div>
+				</div>
+				<div id='footer'>
+					<div id='address'>
+						<p><span style='font-weight:bold'>The Railyard Cleaners</span></br>601 E Whitestone Blvd Suite 234</br>Cedar Park, TX 78613</p>
+					</div>
+					<div id='phone'>
+						<p><span style='font-weight:bold'>Phone:</span> (512) 259-5519</p>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
 </html>
