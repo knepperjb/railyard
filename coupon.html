@@ -3,6 +3,14 @@
 <head>
 	<script src='assets/javascripts/jquery.js'></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<script>
+		$(document).ready(function() {
+			$('.printcoupon').click(function() {
+				window.print();
+				console.log('p')
+			})
+		})
+	</script>
 	<style>
 		
 		body, html {
@@ -207,9 +215,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 			float: right;
 			margin-right: 1vw;
 		}
+		.coupondiv {
+			width: 40vw;
+			margin-left: 23vw;
+			margin-top: 5vw;
+		}
+		.coupondiv2 {
+			width: 40vw;
+			margin-left: 23vw;
+			margin-top: 4vw;
+		}
+		#couponpic {
+			height: 100%;
+			width: 100%;
+		}
+		#couponpic2 {
+			height:100%;
+			width: 100%;
+		}
+		.printcoupon {
+			height: 4vw;
+			width: 10vw;
+			margin-left: 20vw;
+			margin-top: 2vw;
+			font-size: 1.5vw;
+		}
 		@media screen and (max-width: 1920px) {
 			.leftbar {
-				height: 2100px;
+				height: 2200px;
 			}
 		}
 		@media screen and (max-width: 1440px) {
@@ -230,6 +263,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 		@media screen and (max-width: 360px) {
 			.leftbar {
 				height: 640px;
+			}
+		}
+		@media print {
+			body {
+				visibility: hidden;
+			}
+			#couponpic {
+				visibility: visible;
 			}
 		}
 	</style>
@@ -271,6 +312,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 					<img id='mainphoto' src='assets/photos/railyard.jpg'>
 					<p class='callus'>Call Us in Cedar Park, Texas at (512) 259-5519</p>
 				</div>
+				<div class='coupondiv'>
+					<img id='couponpic' src='assets/photos/coupon.png'>
+				</div>
+				<button class='printcoupon'>Print Coupon</button>
+				<div class='coupondiv2'>
+					<img id='couponpic2' src='assets/photos/coupon.png'>
+				</div>
+				<button class='printcoupon'>Print Coupon</button>
 				
 				<div class='creditcarddiv'>
 					<img id='credit' src='assets/photos/credit_card_logos_10.jpg'>
