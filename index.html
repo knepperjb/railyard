@@ -32,7 +32,6 @@
 		.inner {
 			margin-left: auto;
 			display: block;
-			/*position: relative;*/
 			margin-right: auto;
 			width: 70%;
 			height: 100vh !important;
@@ -197,6 +196,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 			border-top: 1px solid black;
 			border-bottom: 1px solid black;
 			font-size: 1vw;
+			bottom: 0;
 		}
 		#address {
 			width: 25%;
@@ -226,10 +226,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 			.leftbar {
 				height: 1050px;
 			}
+			.push {
+				height: 130px;
+			}
 		}
 		@media screen and (max-width: 360px) {
 			.leftbar {
 				height: 640px;
+			}
+			.push {
+				height: 160px;
+			}
+		}
+		@media screen and (max-width: 320px) {
+			.push {
+				height: 200px;
 			}
 		}
 	</style>
@@ -294,20 +305,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 				<div class='creditcarddiv'>
 					<img id='credit' src='assets/photos/credit_card_logos_10.jpg'>
 				</div>
-				<div class='bottomlinks'>
-					<div class='footlink'><a href='#'>Home</a></div>
-					<div class='footlink'><a href='#'>Coupons</a></div>
-					<div class='footlink'><a href='#'>Testimonials</a></div>
-					<div class='loc'><a href='#'>Location</a></div>
-				</div>
-				<div id='footer'>
-					<div id='address'>
-						<p><span style='font-weight:bold'>The Railyard Cleaners</span></br>601 E Whitestone Blvd Suite 234</br>Cedar Park, TX 78613</p>
+				<div class='push'></div>
+				<div class='footer'>
+					<div class='bottomlinks'>
+						<div class='footlink'><a href='#'>Home</a></div>
+						<div class='footlink'><a href='#'>Coupons</a></div>
+						<div class='footlink'><a href='#'>Testimonials</a></div>
+						<div class='loc'><a href='#'>Location</a></div>
 					</div>
-					<div id='phone'>
-						<p><span style='font-weight:bold'>Phone:</span> (512) 259-5519</p>
-					</div>
+					<div id='footer'>
+						<div id='address'>
+							<p><span style='font-weight:bold'>The Railyard Cleaners</span></br>601 E Whitestone Blvd Suite 234</br>Cedar Park, TX 78613</p>
+						</div>
+						<div id='phone'>
+							<p><span style='font-weight:bold'>Phone:</span> (512) 259-5519</p>
+						</div>
 
+					</div>
 				</div>
 			</div>
 		</div>
