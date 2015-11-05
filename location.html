@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAprGMBx5cYrX2NkNWarrKGZczEMdqGbIs&callback=initMap">
+    </script>
+	<script>
+	
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: 30.523487, lng: -97.824315 },
+				zoom: 13
+			});
+		var myLatLng = {lat: 30.523487, lng: -97.824315 };
+		var marker = new google.maps.Marker({
+    		position: myLatLng,
+    		map: map,
+    		title: 'Hello World!'
+  		});
+  		var contentString = '<div id="infodiv">' + 'The Railyard Cleaners' + '</br>' + '601 E Whitestone Blvd Suite 234' + '</br>' + 'Cedar Park, TX 78613' + '</div>'
+  		var infowindow = new google.maps.InfoWindow({content: contentString});
+  		infowindow.open(map, marker);
+
+	}
+	
+	</script>
+	<script src='assets/javascripts/jquery.js'></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<style>
+		
+		body, html {
+			background-color: #384D8E;
+			width: 100%;
+			height: 100%;
+		}
+		
+		#container {
+			background-color: white;
+			/*margin-left: 20%;*/
+			/*margin-right: 20%;*/
+			/*width: 970px;*/
+			/*height: 100vh;*/
+			margin-top: -20px;
+		}
+		.outer {
+			display: table;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+		.middle {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.inner {
+			margin-left: auto;
+			display: block;
+			margin-right: auto;
+			width: 70%;
+			height: 100vh !important;
+			overflow: auto;
+			margin-bottom: 0px;
+		}
+		.leftbar {
+			/*position: fixed;*/
+			width: 25%;
+			height: 1500px;
+			background-color: #F2F2F2;
+			float: left;
+			border: 1px solid #E6E6E6;
+			z-index: 9999;
+		}
+		.header {
+			/*float: left;*/
+			margin-left: 27vw;
+
+		}
+		#header {
+			font-size: 3vw;
+		}
+		.linkbutton {
+			border-bottom: 1px solid #C4C4C4;
+			width: 100%;
+			height: 4vw;
+			background-color: /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dbdbdb+0,efefef+90,efefef+98 */
+background: rgb(219,219,219); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(219,219,219,1) 0%, rgba(239,239,239,1) 90%, rgba(239,239,239,1) 98%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(219,219,219,1)), color-stop(90%,rgba(239,239,239,1)), color-stop(98%,rgba(239,239,239,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+
+		}
+		#homelink {
+			height: 4.4vw;
+		}
+		#hometext {
+			padding-top: 1.3vw;
+		}
+		.linktext {
+			font-size: 1.5vw;
+			font-weight: bold;
+			color: #000000;
+			padding-top: 1vw;
+			margin-left: 1vw;
+		}
+		.sidelink:hover {
+			text-decoration: none;
+		}
+		.servicearea {
+			text-align: center;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 1vw;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.leftbartext {
+			font-size: 1vw;
+		}
+		#mainphotodiv {
+			margin-left: 22.5vw;
+			width: 40vw;
+		}
+		#mainphoto {
+			width: 100%;
+			border-radius: 1vw;
+		}
+		.callus {
+			font-size: 1.5vw;
+			color: #80008C;
+			font-weight: bold;
+			margin-left: 3vw;
+			margin-top: 1vw;
+		}
+		#paragraphone {
+			width: 45vw;
+			margin-left: 21vw;
+		}
+		#forless {
+			font-size: 2.5vw;
+			color: #B71A00;
+		}
+		#about {
+			margin-left: 21vw;
+			width: 47vw;
+			margin-top: 5vw;
+		}
+		#aboutheader {
+			font-size: 2.5vw;
+			color: #B71A00;
+		}
+		#abouttext {
+			width: 15vw;
+			float: left;
+		}
+		.intro {
+			font-size: 1.2vw;
+		}
+		#clothesdiv {
+			height: 25vw;
+			width: 25vw;
+			float: left;
+			margin-left: 4vw;
+			margin-top: 8vw;
+		}
+		#clothes {
+			height: 25vw;
+			width: 25vw;
+		}
+		#clothingalterations {
+			margin-top: 47vw;
+			text-align: center;
+			width: 43vw;
+			margin-left: 21vw;
+		}
+		.alterationshead {
+			font-size: 1.2vw;
+			color: #B71A00;
+			font-weight: bold;
+		}
+		.alterationstext {
+			font-size: 1vw;
+		}
+		.creditcarddiv {
+			margin-left: 29vw;
+			margin-top: 5vw;
+			width: 30vw;
+		}
+		#credit {
+			width: 100%;
+			height: 100%;
+		}
+		.bottomlinks {
+			width: 40vw;
+			margin-left: 28vw;
+			margin-top: 2vw;
+		}
+		.footlink {
+			float: left;
+			margin-right: 3vw;
+			border-right: 1px solid black;
+			padding-right: 2vw;
+			font-size: 1vw;
+		}
+		.loc {
+			font-size: 1vw;
+		}
+		#id {
+			border-right: none;
+		}
+		#footer {
+			height: 5vw;
+			margin-top: 1vw;
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1vw;
+			bottom: 0;
+		}
+		#address {
+			width: 25%;
+			margin-left: 1vw;
+			float: left;
+		}
+		#phone {
+			float: right;
+			margin-right: 1vw;
+		}
+		#map {
+			height: 50vw;
+			width: 50vw;
+		}
+		#infodiv {
+			font-size: 1vw;
+		}
+		@media screen and (max-width: 1920px) {
+			.leftbar {
+				height: 2200px;
+			}
+		}
+		@media screen and (max-width: 1440px) {
+			.leftbar {
+				height: 1640px;
+			}
+		}
+		@media screen and (max-width: 1280px) {
+			.leftbar {
+				height: 1480px;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			.leftbar {
+				height: 1050px;
+			}
+			.push {
+				height: 130px;
+			}
+		}
+		@media screen and (max-width: 360px) {
+			.leftbar {
+				height: 640px;
+			}
+			.push {
+				height: 160px;
+			}
+		}
+		@media screen and (max-width: 320px) {
+			.push {
+				height: 200px;
+			}
+		}
+	</style>
+</head>
+<title>
+	The Railyard Cleaners
+</title>
+<body onload='initMap()'>
+	<div class='outer'>
+		<div class='middle'>
+			<div class='inner' id='container'>
+				<div class='leftbar' id='navbar'>
+					<a class='sidelink' href='index.html'><div class='linkbutton' id='homelink'>
+						<p class='linktext' id='hometext'>Home</p>
+					</div></a>
+					<a class='sidelink' href='coupon.html'><div class='linkbutton'>
+						<p class='linktext'>Coupons</p>
+					</div></a>
+					<a class='sidelink' href=#'#'><div class='linkbutton'>
+						<p class='linktext'>Testimonials</p>
+					</div></a>
+					<a class='sidelink' href='#'><div class='linkbutton'>
+						<p class='linktext'>Location</p>
+					</div></a>
+					<div class='servicearea'>
+						<p class='leftbartext'><span class='bold'>Service area:</span></br>Cedar Park and surrounding areas</p>
+					</div>
+					<div class='servicearea'>
+						<p class='leftbartext'><span class='bold'>Hours:</span></br>Monday - Friday</br>7:00 a.m. to 6:00 p.m.</br>Saturday</br>9:00 a.m. to 2:00 p.m.</br>Closed Sunday</p>
+					</div>
+					<div class='servicearea'>
+						<p class='leftbartext'><span class='bold'>We Service Many Items for Your Convenience:</span></br>Comforters, Tablecloths, Curtains, Wash Cloths, Table Mats, Sweaters, Pullovers, Blouses, Ties, Jumpsuits, Coats, Jackets, Jeans, Pants, Shirts, Dresses</p>
+					</div>
+				</div>
+				<div class='header'>
+				<h2 id='header' style='color:#B71A00'>The Railyard Cleaners</h2>
+				</div>
+				<div id='mainphotodiv'>
+					<img id='mainphoto' src='assets/photos/railyard.jpg'>
+					<p class='callus'>Call Us in Cedar Park, Texas at (512) 259-5519</p>
+				</div>
+				<div id='map'>
+				</div>
+				
+				<!-- <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ76hcGf4sW4YRUDEZby_KG5A&key=AIzaSyCsCuqgGwHuMfjCLrJbcM0Gnh3qbmWFQ8c" allowfullscreen></iframe>  -->
+				<div class='creditcarddiv'>
+					<img id='credit' src='assets/photos/credit_card_logos_10.jpg'>
+				</div>
+				<div class='push'></div>
+				<div class='footer'>
+					<div class='bottomlinks'>
+						<div class='footlink'><a href='index.html'>Home</a></div>
+						<div class='footlink'><a href='coupon.html'>Coupons</a></div>
+						<div class='footlink'><a href='#'>Testimonials</a></div>
+						<div class='loc'><a href='#'>Location</a></div>
+					</div>
+					<div id='footer'>
+						<div id='address'>
+							<p><span style='font-weight:bold'>The Railyard Cleaners</span></br>601 E Whitestone Blvd Suite 234</br>Cedar Park, TX 78613</p>
+						</div>
+						<div id='phone'>
+							<p><span style='font-weight:bold'>Phone:</span> (512) 259-5519</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
