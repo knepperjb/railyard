@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='assets/javascripts/jquery.js'></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<style>
+		
+		body, html {
+			background-color: #384D8E;
+			width: 100%;
+			height: 100%;
+		}
+		
+		#container {
+			background-color: white;
+			/*margin-left: 20%;*/
+			/*margin-right: 20%;*/
+			/*width: 970px;*/
+			/*height: 100vh;*/
+			margin-top: -20px;
+		}
+		.outer {
+			display: table;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+		.middle {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.inner {
+			margin-left: auto;
+			display: block;
+			margin-right: auto;
+			width: 70%;
+			height: 100vh !important;
+			overflow: auto;
+			margin-bottom: 0px;
+		}
+		.leftbar {
+			/*position: fixed;*/
+			width: 25%;
+			height: 1500px;
+			background-color: #F2F2F2;
+			float: left;
+			border: 1px solid #E6E6E6;
+			z-index: 9999;
+		}
+		.header {
+			/*float: left;*/
+			margin-left: 27vw;
+
+		}
+		#header {
+			font-size: 3vw;
+		}
+		.linkbutton {
+			border-bottom: 1px solid #C4C4C4;
+			width: 100%;
+			height: 4vw;
+			background-color: /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dbdbdb+0,efefef+90,efefef+98 */
+background: rgb(219,219,219); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(219,219,219,1) 0%, rgba(239,239,239,1) 90%, rgba(239,239,239,1) 98%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(219,219,219,1)), color-stop(90%,rgba(239,239,239,1)), color-stop(98%,rgba(239,239,239,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(219,219,219,1) 0%,rgba(239,239,239,1) 90%,rgba(239,239,239,1) 98%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+
+		}
+		#homelink {
+			height: 4.4vw;
+		}
+		#hometext {
+			padding-top: 1.3vw;
+		}
+		.linktext {
+			font-size: 1.5vw;
+			font-weight: bold;
+			color: #000000;
+			padding-top: 1vw;
+			margin-left: 1vw;
+		}
+		.sidelink:hover {
+			text-decoration: none;
+		}
+		.servicearea {
+			text-align: center;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 1vw;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.leftbartext {
+			font-size: 1vw;
+		}
+		#mainphotodiv {
+			margin-left: 22.5vw;
+			width: 40vw;
+		}
+		#mainphoto {
+			width: 100%;
+			border-radius: 1vw;
+		}
+		.callus {
+			font-size: 1.5vw;
+			color: #80008C;
+			font-weight: bold;
+			margin-left: 3vw;
+			margin-top: 1vw;
+		}
+		#paragraphone {
+			width: 45vw;
+			margin-left: 21vw;
+		}
+		#forless {
+			font-size: 2.5vw;
+			color: #B71A00;
+		}
+		#about {
+			margin-left: 21vw;
+			width: 47vw;
+			margin-top: 5vw;
+		}
+		#aboutheader {
+			font-size: 2.5vw;
+			color: #B71A00;
+		}
+		#abouttext {
+			width: 15vw;
+			float: left;
+		}
+		.intro {
+			font-size: 1.2vw;
+		}
+		#clothesdiv {
+			height: 25vw;
+			width: 25vw;
+			float: left;
+			margin-left: 4vw;
+			margin-top: 8vw;
+		}
+		#clothes {
+			height: 25vw;
+			width: 25vw;
+		}
+		#clothingalterations {
+			margin-top: 47vw;
+			text-align: center;
+			width: 43vw;
+			margin-left: 21vw;
+		}
+		.alterationshead {
+			font-size: 1.2vw;
+			color: #B71A00;
+			font-weight: bold;
+		}
+		.alterationstext {
+			font-size: 1vw;
+		}
+		.creditcarddiv {
+			margin-left: 29vw;
+			margin-top: 5vw;
+			width: 30vw;
+		}
+		#credit {
+			width: 100%;
+			height: 100%;
+		}
+		.bottomlinks {
+			width: 40vw;
+			margin-left: 28vw;
+			margin-top: 2vw;
+		}
+		.footlink {
+			float: left;
+			margin-right: 3vw;
+			border-right: 1px solid black;
+			padding-right: 2vw;
+			font-size: 1vw;
+		}
+		.loc {
+			font-size: 1vw;
+		}
+		#id {
+			border-right: none;
+		}
+		#footer {
+			height: 5vw;
+			margin-top: 1vw;
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			font-size: 1vw;
+			bottom: 0;
+		}
+		#address {
+			width: 25%;
+			margin-left: 1vw;
+			float: left;
+		}
+		#phone {
+			float: right;
+			margin-right: 1vw;
+		}
+		@media screen and (max-width: 1920px) {
+			.leftbar {
+				height: 2275px;
+			}
+		}
+		@media screen and (max-width: 1440px) {
+			.leftbar {
+				height: 1740px;
+			}
+		}
+		@media screen and (max-width: 1280px) {
+			.leftbar {
+				height: 1560px;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			.leftbar {
+				height: 1020px;
+			}
+		}
+		@media screen and (max-width: 380px) {
+			.leftbar {
+				height: 640px;
+			}
+			.push {
+				height: 75px;
+			}
+		}
+		@media screen and (max-width: 330px) {
+			.push {
+				height: 115px;
+			}
+		}
+	</style>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<title>
+	The Railyard Cleaners
+</title>
+<body>
+	<div class='outer'>
+		<div class='middle'>
+			<div class='inner' id='container'>
+				<div class='leftbar' id='navbar'>
+					<a class='sidelink' href='index.html'><div class='linkbutton' id='homelink'>
+						<p class='linktext' id='hometext'>Home</p>
+					</div></a>
+					<a class='sidelink' href='coupon.html'><div class='linkbutton'>
+						<p class='linktext'>Coupons</p>
+					</div></a>
+					<a class='sidelink' href='testimonials.html'><div class='linkbutton'>
+						<p class='linktext'>Testimonials</p>
+					</div></a>
+					<a class='sidelink' href='location.html'><div class='linkbutton'>
+						<p class='linktext'>Location</p>
+					</div></a>
+					<div class='servicearea'>
+						<p class='leftbartext'><span class='bold'>Service area:</span></br>Cedar Park and surrounding areas</p>
+					</div>
+					<div class='servicearea'>
+						<p class='leftbartext'><span class='bold'>Hours:</span></br>Monday - Friday</br>7:00 a.m. to 6:00 p.m.</br>Saturday</br>9:00 a.m. to 2:00 p.m.</br>Closed Sunday</p>
+					</div>
+					<div class='servicearea'>
+						<p class='leftbartext'><span class='bold'>We Service Many Items for Your Convenience:</span></br>Comforters, Tablecloths, Curtains, Wash Cloths, Table Mats, Sweaters, Pullovers, Blouses, Ties, Jumpsuits, Coats, Jackets, Jeans, Pants, Shirts, Dresses</p>
+					</div>
+				</div>
+				<div class='header'>
+				<h2 id='header' style='color:#B71A00'>The Railyard Cleaners</h2>
+				</div>
+				<div id='mainphotodiv'>
+					<img id='mainphoto' src='assets/photos/railyard2.jpg'>
+					<p class='callus'>Call Us in Cedar Park, Texas at (512) 259-5519</p>
+				</div>
+				<div id='paragraphone'>
+					<p class='intro'>"The Railyard Cleaners.  The work they do for my clothes couldn't be any better.  There's no other place I'd bring them to.  My clothes come out perfect and just the way I want them.  Not to mention the beautiful smile from Ms. Jenny at the front counter.  Super friendly and she takes care of your clothes like her own.  And if needed, you can have them back at 5:00PM on the same day!  As long as you bring it in the morning of course.  This fine establishment is not only a great place to bring your laundry items but it's also nice to truly be welcomed by such kindness at the door. This is the best cleaners in Cedar Park with no competition from the others."</br></br>-<span style='font-style:italic'>Abby Ho, Cedar Park</span></p></br>
+					<p class='intro'>"Railyard Cleaners is the best cleaner I've ever used.  From my jeans to shirts and suits they have a gift to make clothes look good and new.  Prices are best and always better than the rest.  So come on down to the best cleaners around and tell them the Fitness Pastor sent you."</br></br><span style='font-style:italic'>-Michael Shepherd, Cedar Park</span></p></br>
+					<p class='intro'>"I don't know anyone who works any harder at her job than Jenny, the owner.  After I returned for my third or fourth visit, she knew my name, what type of starch I wanted.  If she is not standing up front when I walk in, I know she will be there in about two seconds after running from the back so her customer will not have to wait.  She has never lost an item of clothing and if I get something to her late and need it the next day, she usually can accomodate my wishes.  This gal is dedicated to customer satisfaction."</br></br><span style='font-style: italic'>-Hong Nguyen, Cedar Park</span></p></br>
+					<p class='intro'>"The cleaner did a great job on cleaning and pressing my shirts.  They did a great job on the collars, the price was good, and the service was very friendly.  They also do alterations, and I'll be back this week to give that a try."</br></br><span style='font-style: italic'>-Huy Lee, Cedar Park</span></p></br>
+					<p class='intro'>"Amazing work, amazing busines.  I don't know what the other reviews are even talking about.  The Railyard Cleaners is a CLEANERS, so here's a REAL review of the cleaners.  The work they do for my clothes couldn't be any better.  There's no other place I'd bring it to.  They come out perfect and just the way I want them to be.  And I'm not even exaggerating.  Not to mention Jenny, the lovely lady you meet when you walk in at the front counter.  Super friendly, takes care of your clothes like her own and you can even have them back by 5:00pm the day of if you come in early in the morning.  There's nothing bad I can say about this establishment honestly.  Best cleaners in Cedar Park.  Hands down."</br></br><span style='font-style:italic'>-Hunter Johnson, Cedar Park</span></p>
+				</div>
+				
+				<div class='creditcarddiv'>
+					<img id='credit' src='assets/photos/credit_card_logos_10.jpg'>
+				</div>
+				<div class='push'></div>
+				<div class='footer'>
+					<div class='bottomlinks'>
+						<div class='footlink'><a href='index.html'>Home</a></div>
+						<div class='footlink'><a href='coupon.html'>Coupons</a></div>
+						<div class='footlink'><a href='testimonials.html'>Testimonials</a></div>
+						<div class='loc'><a href='location.html'>Location</a></div>
+					</div>
+					<div id='footer'>
+						<div id='address'>
+							<p><span style='font-weight:bold'>The Railyard Cleaners</span></br>601 E Whitestone Blvd Suite 234</br>Cedar Park, TX 78613</p>
+						</div>
+						<div id='phone'>
+							<p><span style='font-weight:bold'>Phone:</span> (512) 259-5519</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
